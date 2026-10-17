@@ -171,10 +171,10 @@
       <h2>2. Information We Collect</h2>
       <p>We collect information you provide directly to us when you create an account, upload content, interact with creators, or communicate with us:</p>
       <ul>
-        <li><strong>Account &amp; Profile Information:</strong> Username, display name, email address, password hash (via secure Firebase Authentication), and profile photo.</li>
-        <li><strong>User-Generated Content:</strong> Videos you record or upload, video captions, hashtags, music selections, and comments.</li>
-        <li><strong>Engagement Data:</strong> Likes, follows, watch history, views, and interactions within the video feed.</li>
-        <li><strong>Technical &amp; Device Information:</strong> Device model, operating system version, anonymous unique device identifiers, and crash logs for stability and performance.</li>
+        <li><strong>Account &amp; Profile Information:</strong> Full name, display name, unique username, unique User ID (UID), email address, profile photo, and secure authentication tokens (via Google Sign-In &amp; Firebase Authentication).</li>
+        <li><strong>User-Generated Content &amp; Communications:</strong> Videos you record or upload, video captions, hashtags, music selections, comments, and direct messages sent through our in-app chat inbox.</li>
+        <li><strong>Engagement &amp; Activity Data:</strong> Likes, follows, bookmarks, watch history, views, and social interactions within the video feed.</li>
+        <li><strong>Technical, Device &amp; Crash Information:</strong> Device model, operating system version, unique device identifiers (Device IDs &amp; Android Advertising ID / AAID), IP address, and real-time crash logs (via Firebase Crashlytics) for stability, performance, and bug diagnosis.</li>
       </ul>
     </div>
 
@@ -204,34 +204,45 @@
 
     <div class="card">
       <h2>5. Data Storage, Security &amp; Cloud Infrastructure</h2>
-      <p>All video and media files are stored securely in <strong>Cloudflare R2 Object Storage</strong> and accelerated through Cloudflare Global Edge Network. Application state and user accounts are managed via encrypted database protocols.</p>
+      <p>All video and media files are stored securely in <strong>Cloudflare R2 Object Storage</strong> and accelerated through Cloudflare Global Edge Network. Application state, user accounts, and social interactions are managed via <strong>Cloudflare D1 SQL Database</strong> under encrypted protocols.</p>
       <p>We implement industry-standard cryptographic practices (HTTPS/TLS 1.3) to safeguard your data during transmission and at rest. We never sell your personal data to third parties or data brokers.</p>
     </div>
 
     <div class="card">
-      <h2>6. User Rights, Content Deletion &amp; Account Deletion (Google Play Compliance)</h2>
-      <p>You have full control over your personal data and uploaded content on Sirox. Under Google Play Store user data policies, you have the following rights and deletion tools:</p>
+      <h2>6. Third-Party Services &amp; SDKs We Use</h2>
+      <p>To provide high performance, reliable authentication, crash monitoring, and sustainable infrastructure, Sirox integrates the following certified third-party service providers:</p>
       <ul>
-        <li><strong>Access &amp; Edit Profile:</strong> Review and update your profile information, avatar, bio, and username at any time directly in the Profile tab.</li>
-        <li><strong>Individual Video &amp; Data Deletion (Without Account Deletion):</strong> You do not need to delete your entire account to remove specific content. You can permanently delete any of your uploaded videos directly within the Sirox app at any time. Simply open your video, tap the options menu (three dots / more), and select &ldquo;Delete Video&rdquo;. The video and its associated media files on Cloudflare R2 are immediately and permanently removed without affecting the rest of your account.</li>
-        <li><strong>Instant In-App Account Deletion:</strong> You can permanently delete your entire account and all associated personal data directly within the Sirox app at any time by navigating to: <em>Profile &rarr; Settings &rarr; Delete Account</em>. Upon confirmation, your profile, username, uploaded videos, comments, likes, and watch history are permanently and immediately purged from our live database and cloud servers.</li>
-        <li><strong>Report Inappropriate Content &amp; Safety Moderation:</strong> If you encounter content that violates our Community Guidelines, contains offensive material, or infringes copyright, you can report it directly via the in-app Report button on any video or email our moderation team at <a href="mailto:supportsirox@gmail.com" style="color:var(--accent-gold);">supportsirox@gmail.com</a>. All reports are reviewed and acted upon within 24–48 hours.</li>
-        <li><strong>Alternative Web Deletion Request:</strong> If you have uninstalled the app or cannot access your account to use the in-app deletion button, you may email us at <a href="mailto:supportsirox@gmail.com" style="color:var(--accent-gold);">supportsirox@gmail.com</a> with the subject line &ldquo;Request Account Deletion&rdquo;. Our team will verify and permanently purge your data from our database within 7 business days.</li>
+        <li><strong>Google Sign-In &amp; Firebase Authentication (by Google):</strong> Used to securely authenticate users via their Google accounts and maintain encrypted login sessions.</li>
+        <li><strong>Cloudflare D1 &amp; Cloudflare R2:</strong> Used as our primary distributed relational database (D1) and encrypted media object storage (R2) with global CDN delivery.</li>
+        <li><strong>Firebase Crashlytics (by Google):</strong> Used to monitor application stability, detect fatal errors, and capture real-time crash stack traces so our engineering team can swiftly fix bugs.</li>
+        <li><strong>Google AdMob (Google Mobile Ads SDK):</strong> Used to serve contextual, non-intrusive advertisements to support free access to the platform, adhering strictly to Google Play Advertising ID (AAID) policies.</li>
       </ul>
     </div>
 
     <div class="card">
-      <h2>7. Children's Privacy</h2>
-      <p>Sirox is not directed to children under the age of 13. We do not knowingly collect personal identifiable information from children under 13. If you become aware that a child has provided us with personal data, please contact us immediately, and we will take prompt steps to remove such information.</p>
+      <h2>7. User Rights, Content Deletion &amp; Account Deletion (Google Play Compliance)</h2>
+      <p>You have full control over your personal data and uploaded content on Sirox. Under Google Play Store user data policies, you have the following rights and self-service deletion tools:</p>
+      <ul>
+        <li><strong>Access &amp; Edit Profile:</strong> Review and update your profile information, avatar, bio, and username at any time directly in the Profile tab.</li>
+        <li><strong>Individual Video &amp; Data Deletion (Without Account Deletion):</strong> You do not need to delete your entire account to remove specific content. You can permanently delete any of your uploaded videos directly within the Sirox app at any time. Simply open your video, tap the options menu (three dots / more), and select &ldquo;Delete Video&rdquo;. The video and its associated media files on Cloudflare R2 are immediately and permanently removed without affecting the rest of your account.</li>
+        <li><strong>Mandatory In-App Permanent Account Deletion:</strong> For user security and verified identity confirmation, account deletion must be performed directly and exclusively inside the Sirox mobile application. You can permanently delete your entire account and all associated personal data at any time by navigating to: <em>Profile &rarr; Settings &rarr; Delete Account</em>. Upon confirmation, your profile, username, uploaded videos, direct messages, comments, likes, and watch history are permanently and immediately purged from our live database and cloud servers.</li>
+        <li><strong>Notice for Uninstalled Users:</strong> If you have uninstalled the Sirox app from your device and wish to permanently delete your account, you must reinstall the Sirox application, log in with your credentials, and execute the deletion via <em>Profile &rarr; Settings &rarr; Delete Account</em>. Third-party or email-based deletion requests are not accepted to protect user accounts from unauthorized deletion attempts.</li>
+        <li><strong>Report Inappropriate Content &amp; Safety Moderation:</strong> If you encounter content that violates our Community Guidelines, contains offensive material, or infringes copyright, you can report it directly via the in-app Report button on any video or email our moderation team at <a href="mailto:supportsirox@gmail.com" style="color:var(--accent-gold);">supportsirox@gmail.com</a>. All reports are reviewed and acted upon within 24–48 hours.</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h2>8. Changes to This Privacy Policy</h2>
+      <h2>8. Children's Privacy (13+ Age Restriction &amp; COPPA Compliance)</h2>
+      <p>Sirox is exclusively designed and intended for users aged 13 and older. We do not knowingly collect personal identifiable information from children under 13. If you become aware that a child under 13 has provided us with personal data, please contact us immediately, and we will take prompt steps to purge such information permanently.</p>
+    </div>
+
+    <div class="card">
+      <h2>9. Changes to This Privacy Policy</h2>
       <p>We may update our Privacy Policy periodically to reflect changes in our services or legal requirements. We will notify you of any material changes by updating the &ldquo;Effective Date&rdquo; on this page.</p>
     </div>
 
     <div class="card">
-      <h2>9. Contact Us</h2>
+      <h2>10. Contact Us</h2>
       <p>If you have any questions, feedback, or concerns regarding this Privacy Policy or your personal data, please reach out to our dedicated support team:</p>
       <div class="contact-box">
         <strong>Sirox Support &amp; Developer Team</strong><br>
