@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service - Sirox</title>
+  <meta name="description" content="Official Terms of Service for Sirox (Sirox - Short Video App).">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -63,6 +64,29 @@
       letter-spacing: -0.5px;
     }
     .last-updated { font-size: 13.5px; color: var(--text-muted); }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.02);
+      transition: all 0.2s ease;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-gold);
+      border-color: rgba(223, 183, 108, 0.4);
+      background: rgba(223, 183, 108, 0.1);
+    }
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -87,22 +111,46 @@
       height: 18px;
       background: var(--accent-gold);
       border-radius: 4px;
+      flex-shrink: 0;
     }
     p { color: var(--text-muted); margin-bottom: 14px; font-size: 14.5px; }
+    p:last-child { margin-bottom: 0; }
     ul { margin-left: 20px; margin-bottom: 14px; color: var(--text-muted); font-size: 14.5px; }
     li { margin-bottom: 8px; }
     strong { color: var(--text-main); }
+    a.inline-link { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
+    a.inline-link:hover { text-decoration: underline; }
     .contact-box {
       background: rgba(223, 183, 108, 0.06);
       border: 1px dashed rgba(223, 183, 108, 0.35);
       border-radius: 12px;
       padding: 18px 22px;
       margin-top: 14px;
+      color: var(--text-muted);
+      font-size: 14.5px;
     }
     .contact-box a { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
-    .footer { text-align: center; margin-top: 50px; color: var(--text-muted); font-size: 13px; }
-    .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 14px; }
-    .footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 13.5px; }
+    .contact-box a:hover { text-decoration: underline; }
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 14px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13.5px;
+    }
+    .footer-links a:hover { color: var(--text-main); }
   </style>
 </head>
 <body>
@@ -111,24 +159,30 @@
       <div class="badge">Official Legal Document</div>
       <div class="brand">SIROX <span>APP</span></div>
       <h1>Terms of Service</h1>
-      <div class="last-updated">Effective Date: October 14, 2026 &bull; Latest Version for Google Play Store</div>
+      <div class="last-updated">Effective Date: October 14, 2026 &bull; Last Updated: November 21, 2026 &bull; Latest Version for Google Play Store</div>
+      <div class="nav-links">
+        <a href="index.html">Privacy Policy</a>
+        <a href="terms.html" class="active">Terms of Service</a>
+        <a href="safety-standards.html">Safety Standards</a>
+      </div>
     </div>
 
     <div class="card">
       <h2>1. Acceptance of Terms</h2>
-      <p>By creating an account or using Sirox, you agree to comply with and be bound by these Terms of Service. If you do not agree, do not access or use the application.</p>
+      <p>By creating an account or using <strong>Sirox</strong> (<em>Sirox - Short Video App</em>), you agree to comply with and be bound by these Terms of Service, our <a href="index.html" class="inline-link">Privacy Policy</a>, and our <a href="safety-standards.html" class="inline-link">Safety Standards &amp; CSAE Policy</a>. If you do not agree, do not access or use the application.</p>
     </div>
 
     <div class="card">
-      <h2>2. User Content &amp; Conduct Rules</h2>
-      <p>Users are solely responsible for content uploaded to Sirox. You strictly agree NOT to post or transmit content that:</p>
+      <h2>2. User Content, Conduct Rules &amp; Zero-Tolerance Safety Enforcement</h2>
+      <p>Users are solely responsible for content uploaded to Sirox. You strictly agree NOT to post, share, or transmit content that:</p>
       <ul>
+        <li>Involves, promotes, or facilitates Child Sexual Abuse and Exploitation (CSAE), grooming, or any form of minor endangerment (subject to immediate permanent account ban and reporting to relevant authorities under our <a href="safety-standards.html" class="inline-link">Safety Standards</a>).</li>
         <li>Is illegal, harmful, abusive, defamatory, harassing, or hateful.</li>
-        <li>Contains explicit pornography, violence, or dangerous activities.</li>
-        <li>Infringes upon any copyright, trademark, patent, or intellectual property rights.</li>
+        <li>Contains explicit pornography, graphic violence, or dangerous activities.</li>
+        <li>Infringes upon any copyright, trademark, patent, or intellectual property rights (infringing audio may be muted remotely or the video removed).</li>
         <li>Promotes spam, malware, phishing, or deceptive schemes.</li>
       </ul>
-      <p>We reserve the right to remove any violating content and suspend or terminate accounts immediately without prior notice.</p>
+      <p>Users may report violating videos or accounts directly inside the Sirox app. Videos reaching 10 unique user reports are automatically hidden from public feeds pending moderation review. We reserve the right to remove any violating content and permanently suspend or ban accounts immediately without prior notice.</p>
     </div>
 
     <div class="card">
@@ -142,10 +196,12 @@
     </div>
 
     <div class="card">
-      <h2>5. Contact Information</h2>
-      <p>For inquiries regarding these Terms of Service, contact:</p>
+      <h2>5. Contact Information &amp; Safety Point of Contact</h2>
+      <p>For inquiries regarding these Terms of Service or to report safety concerns, contact our team:</p>
       <div class="contact-box">
-        Email: <a href="mailto:supportsirox@gmail.com">supportsirox@gmail.com</a>
+        <strong>Sirox Support &amp; Safety Compliance Team</strong><br>
+        Email: <a href="mailto:supportsirox@gmail.com">supportsirox@gmail.com</a><br>
+        Safety Policy: <a href="safety-standards.html">View Official Safety Standards &amp; CSAE Policy</a>
       </div>
     </div>
 
@@ -153,6 +209,7 @@
       <div class="footer-links">
         <a href="index.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
+        <a href="safety-standards.html">Safety Standards</a>
       </div>
       <p>&copy; 2026 Sirox. All rights reserved.</p>
     </div>
